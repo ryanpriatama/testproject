@@ -51,7 +51,7 @@ You must download and install `Go`, follow [this instruction](https://golang.org
 
 After Golang installed, Follow this instructions
 ```bash
-$ git clone https://github.com/ryanpriatama/testBackendProduct
+$ git clone https://github.com/ryanpriatama/testproject
 $ go run main.go
 ```
 

@@ -4,8 +4,8 @@
 | No |     Web Service     | Method | URL |
 |----|---------------------|--------|-----|
 | 1 | [Create Product](#create-product) | POST | /api/products |
-| 2 | [Delete Product](#create-product) | DELETE | /api/products |
-| 3 | [Get Product](#create-product) | GET | /api/products |
+| 2 | [Delete Product](#delete-product) | DELETE | /api/products |
+| 3 | [Get Product](#get-product) | GET | /api/products |
 
 
 ## Create Product
@@ -54,13 +54,50 @@ curl --location 'localhost:3000/api/products?request_id=101' \
 }
 ```
 
-### Body Response Fail
+### Body Response Fail Unauthorized
 ```json
 {
     "code": 401,
     "status": "UNAUTHORIZED",
     "request_id": 101,
-    "data": Null
+    "data": null
 }
 ```
+
+## Delete Product
+### URL : `/api/products`
+### Method : `DELETE`
+
+### Query Param
+    request_id=101
+    id=1
+
+### Header
+    'X-API-Key: api-key-rahasia' \
+    'Content-Type: application/json'
+
+### Example cURL
+curl --location --request DELETE 'localhost:3000/api/products?request_id=101&id=1' \
+--header 'x-API-Key: api-key-rahasia'
+
+### Body Response Success
+```json
+{
+    "code": 200,
+    "status": "OK",
+    "request_id": 101,
+    "data": null
+```
+
+### Body Response Fail Unauthorized
+```json
+{
+    "code": 401,
+    "status": "UNAUTHORIZED",
+    "request_id": 101,
+    "data": null
+}
+```
+
+
 

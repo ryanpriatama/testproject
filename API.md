@@ -87,6 +87,49 @@ curl --location --request DELETE 'localhost:3000/api/products?request_id=101&id=
     "status": "OK",
     "request_id": 101,
     "data": null
+}
+```
+
+### Body Response Fail Unauthorized
+```json
+{
+    "code": 401,
+    "status": "UNAUTHORIZED",
+    "request_id": 101,
+    "data": null
+}
+```
+
+## Get Product
+### URL : `/api/products`
+### Method : `GET`
+
+### Query Param
+    request_id=101
+    id=1
+
+### Header
+    'X-API-Key: api-key-rahasia' \
+    'Content-Type: application/json'
+
+### Example cURL
+curl --location 'localhost:3000/api/products?request_id=104&id=20' \
+--header 'x-API-Key: api-key-rahasia'
+
+### Body Response Success
+```json
+{
+    "code": 200,
+    "status": "OK",
+    "request_id": 101,
+    "data": {
+        "id": 1,
+        "customer": "ryan",
+        "price": 12000,
+        "quantity": 20,
+        "timestamp": "2023-04-12T00:23:06.396224Z"
+    }
+}
 ```
 
 ### Body Response Fail Unauthorized
